@@ -1,12 +1,15 @@
-Sample node.js app deployment with Ansible
+Sample node.js & docker application
 ===
 
-Install ansible: [Ansible](http://docs.ansible.com/intro_installation.html)
+Install docker: [Docker](https://docs.docker.com/installation/)
+
+Install docker-compose: [Docker Compose](https://docs.docker.com/compose/install/)
 
 
-Deploying app
+Build and run container:
 --
 ```
-cd deploy
-ansible-playbook deploy.yml -i demo -u root -e env=demo
+cd ./src
+docker build -t docker-node-sample .
+docker run -p "9001:9000" -t docker-node-sample
 ```
