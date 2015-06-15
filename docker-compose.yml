@@ -1,0 +1,13 @@
+api:
+  build: ./src
+  ports:
+    - "9001:9000"
+  links:
+    - mongo:mongo
+mongo:
+  image: mongo:2.6.9
+  ports:
+    - "27020:27017"
+  volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    - .dev/mongo/:/data/db/
